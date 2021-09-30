@@ -1,17 +1,23 @@
-﻿public class Output
+﻿namespace ConsoleApp.CSharpBasics.IO
 {
-    private static IOutput output;
+    using ConsoleApp.CSharpBasics.IO.Implementations;
+    using ConsoleApp.CSharpBasics.IO.Interfaces;
 
-    public static IOutput Out
+    public class Output
     {
-        get
-        {
-            if (output == null)
-            {
-                output = new OutputFactory().GetOutputInstance(typeof(ConsoleOutput));
-            }
+        private static IOutput output;
 
-            return output;
+        public static IOutput Out
+        {
+            get
+            {
+                if (output == null)
+                {
+                    output = new OutputFactory().GetOutputInstance(typeof(ConsoleOutput));
+                }
+
+                return output;
+            }
         }
     }
 }

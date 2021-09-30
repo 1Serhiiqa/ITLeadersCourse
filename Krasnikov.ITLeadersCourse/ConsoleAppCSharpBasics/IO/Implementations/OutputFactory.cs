@@ -1,13 +1,19 @@
-﻿public class OutputFactory : IOutputFactory
+﻿namespace ConsoleApp.CSharpBasics.IO.Implementations
 {
-    public override IOutput GetOutputInstance(Type outpuType)
+    using System;
+    using ConsoleApp.CSharpBasics.IO.Interfaces;
+
+    public class OutputFactory : IOutputFactory
     {
-        switch (outpuType)
+        public override IOutput GetOutputInstance(Type outpuType)
         {
-            case Type when outpuType == typeof(ConsoleOutput):
-                return new ConsoleOutput();
-            default:
-                throw new NotImplementedException();
+            switch (outpuType)
+            {
+                case Type when outpuType == typeof(ConsoleOutput):
+                    return new ConsoleOutput();
+                default:
+                    throw new NotImplementedException();
+            }
         }
     }
 }
