@@ -1,6 +1,9 @@
-﻿public interface IOutput
+﻿namespace ConsoleApp.CSharpBasics.IO.Interfaces
 {
-    void Write(object output = null);
+    public interface IOutput
+    {
+        void Write(object output = null);
 
-    void WriteLine(object output = null);
+        void WriteLine(object output = null);
+    }
 }

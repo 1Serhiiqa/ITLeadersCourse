@@ -1,4 +1,9 @@
-﻿public abstract class IOutputFactory
+﻿namespace ConsoleApp.CSharpBasics.IO.Interfaces
 {
-    public abstract IOutput GetOutputInstance(Type outpuType);
+    using System;
+
+    public abstract class IOutputFactory
+    {
+        public abstract IOutput GetOutputInstance(Type outpuType);
+    }
 }
